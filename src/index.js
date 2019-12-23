@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom"; 
-import Faker from "faker";
+import faker from "faker";
 import CommentDetail from "./CommentDetail";
 
 //  ./ on the above line means that we are looking for the file on the same level
@@ -66,9 +66,24 @@ PASSING MULTIPLE PROPS
 const App = () => {
     return (
         <div className="ui container comments">
-            <CommentDetail author="Sam"/>
-            <CommentDetail author="Alex"/>
-            <CommentDetail author="Jane"/>
+            <CommentDetail 
+                author="Sam" 
+                timeAgo="Today at 4.45pm" 
+                comment="What a world!"
+                avatar={faker.image.avatar()}
+            />
+            <CommentDetail 
+                author="Alex" 
+                timeAgo="Today at 9.55pm" 
+                comment="Now this is a website!!"
+                avatar={faker.image.avatar()}
+            />
+            <CommentDetail 
+                author="Jane" 
+                timeAgo="Yesterday at 1.45am" 
+                comment="How do i change the"
+                avatar={faker.image.avatar()}
+            />
         </div>
     );
 };
