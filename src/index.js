@@ -44,9 +44,20 @@ COMPONENT NESTING
 REACT PROPS SYSTEM
 1. The props system allows for the passing of data from a parent component to a child component.
 2. This allows us to customize and or configure a child component. 
+3. props is short for properties
 
 PASSING AND RECIEVING PROPS
-1. 
+1. We provide information from the parent to the child in the following way.
+2. <CommentDetail author="Sam" />
+3. <CommentDetail author=(is the name of the prop)"Sam"(value of the prop) />
+4. The name of the prop is totally up to the developer. However, we want it to make sense! 
+5. We can reference a JavaScript variable within the value of our props.
+6. for example author= (hardcoded) becomes {author} 
+7. When we provide a prop to a component, we can make it pass uniquely to the children.
+8. We need to make sure that we consume the information that the parent provides.
+9. To use a prop, we then use {props.author} in order to call it within our CommentDetails
+
+PASSING MULTIPLE PROPS
 
 
 */
@@ -55,10 +66,9 @@ PASSING AND RECIEVING PROPS
 const App = () => {
     return (
         <div className="ui container comments">
-            <CommentDetail />
-            <CommentDetail />
-            <CommentDetail />
-            <CommentDetail />
+            <CommentDetail author="Sam"/>
+            <CommentDetail author="Alex"/>
+            <CommentDetail author="Jane"/>
         </div>
     );
 };
