@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom"; 
 import faker from "faker";
 import CommentDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard"; 
 
 //  ./ on the above line means that we are looking for the file on the same level
 
@@ -57,7 +58,8 @@ PASSING AND RECIEVING PROPS
 8. We need to make sure that we consume the information that the parent provides.
 9. To use a prop, we then use {props.author} in order to call it within our CommentDetails
 
-PASSING MULTIPLE PROPS
+ SHOWING CUSTOM CHILDREN 
+ 1. 
 
 
 */
@@ -66,24 +68,38 @@ PASSING MULTIPLE PROPS
 const App = () => {
     return (
         <div className="ui container comments">
-            <CommentDetail 
+            <ApprovalCard>
+                <div>
+                    <h4>Warning</h4>
+                Are you sure you want to do this?
+                </div>
+            </ApprovalCard>
+            <ApprovalCard>
+              <CommentDetail 
                 author="Sam" 
                 timeAgo="Today at 4.45pm" 
                 comment="What a world!"
                 avatar={faker.image.avatar()}
-            />
-            <CommentDetail 
+                //note props are passed like in the above code.
+              />
+            </ApprovalCard>
+            <ApprovalCard>
+              <CommentDetail 
                 author="Alex" 
                 timeAgo="Today at 9.55pm" 
                 comment="Now this is a website!!"
                 avatar={faker.image.avatar()}
-            />
-            <CommentDetail 
+                
+              />
+            </ApprovalCard>
+            <ApprovalCard>
+              <CommentDetail 
                 author="Jane" 
                 timeAgo="Yesterday at 1.45am" 
                 comment="How do i change the"
                 avatar={faker.image.avatar()}
-            />
+              />
+            </ApprovalCard> 
         </div>
     );
 };
