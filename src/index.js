@@ -58,10 +58,6 @@ PASSING AND RECIEVING PROPS
 8. We need to make sure that we consume the information that the parent provides.
 9. To use a prop, we then use {props.author} in order to call it within our CommentDetails
 
- SHOWING CUSTOM CHILDREN 
- 1. 
-
-
 */
 
 
